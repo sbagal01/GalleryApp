@@ -1,0 +1,284 @@
+#action-bar{
+
+background-color: teal;
+height:8vh;
+display: flex;
+}
+
+#action-bar * {
+border:2px solid white;
+border-radius:5px;
+margin: 10px 5px;
+padding: 5px;
+cursor: pointer; 
+}
+#action-bar span:hover{
+    background-color: white;
+}
+#action-bar select{
+    background-color: cyan;
+}
+
+#action-bar select option {
+    margin:10px ;
+    border-bottom: 2px solid teal;
+}
+
+/* this allows that border if present for that element will be included in the said height or width of parameters.by default it is excluded.Eg if we give height 100px and border of 5px then an elemtn of 105px will be created.If we use box-shadow, element of total of 100px will be created */
+
+*{
+    box-sizing: border-box;
+}
+
+
+/* we apply display flex on outer div tag so that we can decide what pattern comes inside of child div tags  */
+
+#content{    
+    height: 92vh;
+    display: flex;
+}
+#content-list{
+    padding: 5px;
+    width: 15vw;
+}
+#content-details{
+    border-left: 2px solid teal; 
+    width: 85vw;
+}
+
+#content-details-overlay {
+    display: none;
+    position: fixed;
+    height: 92vh;
+    width: 100vw;
+    top:8vh;
+    left: 15vw;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2;
+    cursor: pointer;
+}
+#text{
+    position: absolute;
+    color:white;
+    border: 1px solid white;
+    font-size:50px;
+    width: 50%;
+    /* width:50%;  to align text we adjust width to 50% of length of square box */
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);  
+    /* this is done so that middle point comes at center */
+    text-decoration: underline;
+    line-height: 100px;
+    text-align: center; /*horizontally align text within this div*/
+    vertical-align:middle;/* vertically aligning text within div*/
+
+}
+#overlay{
+    position: fixed;
+    height: 92vh;
+    width: 100vw;
+    top:8vh;
+    left:0%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2;
+    cursor: pointer;   
+}
+#play-overlay{
+    position: fixed;
+    height: 92vh;
+    width: 100vw;
+    top:9vh;
+    left:0%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 3;
+    cursor: pointer;
+    display:none;
+}
+#play-overlay #text{
+    position: absolute;
+    font-size: 30px;
+    color: yellow;
+    width: 50%;
+    top:-5%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
+    /* vertically aligning text within div*/
+    line-height: 100px;
+    vertical-align:middle;
+
+    text-align: center; /*horizontally align text within this div*/
+    text-decoration: underline;
+}
+
+#new-slide{
+    background-color: teal;
+    height:100px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    color: white;
+    margin: 5px;
+    font-weight:900;
+}
+#new-slide:hover {
+    transform: scale(1.02);
+}
+#slide-list{
+    /* height: calc(92vh-100px); */
+    height: 92vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+#create-slide{
+    display: none;
+}
+#create-slide div{
+margin: 10px;
+padding: 10px;
+text-align: center;
+}
+
+
+#create-slide textArea{
+    width:90%;
+    height: 55vh;
+    font-size: 20px;
+    border-radius: 4px;
+}
+#create-slide input{
+    width: 90%;
+    height:6vh;
+    font-size: 20px;
+    border-radius: 4px; 
+}
+#create-slide button{
+padding: 20px;
+border-radius: 4px;
+background-color: aquamarine;
+color: white;
+cursor:pointer;
+}
+
+.slide{
+    background-color: teal;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin: 5px;
+    
+    height: 100px;
+    width: 100%;
+    padding: 5px;
+}
+
+.slide:hover{
+    opacity: 0.8;
+}
+.slide .title {
+height: 25%;
+border-bottom: 2px solid white;
+text-align: center;
+}
+.slide .slide-content{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    
+
+}
+.slide .slide-content .desc{
+    height: 100%;
+    width: 48%;
+    background-color: cadetblue;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px 5px;
+    padding: 5px;
+}
+.slide .slide-content img{
+    height: 98%;
+    width: 48%;
+    border-radius: 5px;
+    padding: 3px;
+
+}
+
+#show-slide{
+    display: none;
+}
+.slide-in-view{
+    background-color: teal;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin: 5px;
+    
+    height: 98%;
+    width: 99%;
+    padding: 5px;
+}
+.slide-in-view .slide-header {
+    height: 10%;
+    border-bottom: 2px solid white;
+    /* display: flex; */
+    padding-top: 10px;
+}
+
+.slide-in-view .slide-header .title {
+width: 98%;
+/* height: 10%; */
+
+/* border-bottom: 2px solid white; */
+text-align: center;
+font-size: 40px;
+}
+
+.slide-in-view .slide-header span {
+    padding: 10px 5px;
+    
+}
+
+.slide-in-view .slide-header span:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.slide-in-view .slide-content{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    
+
+}
+.slide-in-view .slide-content .desc{
+    height: 100%;
+    width: 50%;
+    background-color: cadetblue;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px 10px;
+    padding: 5px;
+}
+.slide-in-view .slide-content img{
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    padding: 3px;
+}
+#uploadFile{
+    display:none;
+}
+
+
+
